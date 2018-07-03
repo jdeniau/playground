@@ -59,7 +59,8 @@ class PlaygroundFormFactory
 
 		$form->addInteger('level')
 			->setRequired('Please select valid PHPStan level')
-			->addRule($form::MIN, 'Level must be non-negative integer', 0);
+			->addRule($form::MIN, 'Level must be non-negative integer', 0)
+			->addRule($form::MAX, 'Maximum level is 7', 7);
 
 		$form->addSelect('version')
 			->setItems($versionItems)
